@@ -1,0 +1,42 @@
+{
+  "name": "next-api-flow",
+  "version": "1.0.0",
+  "description": "Standardized API response handling for Next.js applications",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "nextjs",
+    "api",
+    "next-api-flow",
+    "next-api-utils",
+    "response",
+    "standard",
+    "typescript",
+    "rest",
+    "middleware"
+  ],
+  "author": "Aditya Attrish",
+  "license": "MIT",
+  "peerDependencies": {
+    "next": ">=13.0.0",
+    "react": ">=18.0.0"
+  },
+  "files": [
+    "src",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aditya-Attrish/next-api-flow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aditya-Attrish/next-api-flow/issues"
+  },
+  "homepage": "https://github.com/Aditya-Attrish/next-api-flow#readme"
+}
