@@ -1,0 +1,7 @@
+# Development files
+.gitignore
+
+# Documentation
+doc/
+test/
+*.md

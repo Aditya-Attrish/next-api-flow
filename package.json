@@ -11,13 +11,15 @@
   "keywords": [
     "nextjs",
     "api",
+    "Aditya Attrish",
     "next-api-flow",
     "next-api-utils",
     "response",
     "standard",
     "typescript",
     "rest",
-    "middleware"
+    "middleware",
+    "error handling"
   ],
   "author": "Aditya Attrish",
   "license": "MIT",
