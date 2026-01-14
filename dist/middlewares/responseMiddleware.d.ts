@@ -1,4 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ResponseBuilder } from '../builders/responseBuilder';
-export declare function withResponseHandler(handler: (req?: NextRequest, context?: object) => Promise<ResponseBuilder | NextResponse>): (req: NextRequest, context?: object) => Promise<NextResponse<any>>;
-export declare function createApiHandler(handler: (req?: NextRequest, context?: object) => Promise<NextResponse>): (req: NextRequest, context?: object) => Promise<NextResponse<any>>;
+export declare function apiHandler(handler: () => Promise<ResponseBuilder | NextResponse>): () => Promise<NextResponse<any>>;
+export declare function apiHandlerWithArgu(handler: (req: NextRequest) => Promise<ResponseBuilder | NextResponse>): (req: NextRequest) => Promise<NextResponse<any>>;

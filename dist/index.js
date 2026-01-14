@@ -14,7 +14,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createApiHandler = exports.withResponseHandler = exports.HttpStatus = exports.ApiResponse = void 0;
+exports.apiHandler = exports.apiHandlerWithArgu = exports.HttpStatus = exports.ApiResponse = void 0;
 __exportStar(require("./types"), exports);
 __exportStar(require("./utils/statusCodes"), exports);
 __exportStar(require("./builders/responseBuilder"), exports);
@@ -25,5 +25,5 @@ Object.defineProperty(exports, "ApiResponse", { enumerable: true, get: function 
 var statusCodes_1 = require("./utils/statusCodes");
 Object.defineProperty(exports, "HttpStatus", { enumerable: true, get: function () { return statusCodes_1.HttpStatus; } });
 var responseMiddleware_1 = require("./middlewares/responseMiddleware");
-Object.defineProperty(exports, "withResponseHandler", { enumerable: true, get: function () { return responseMiddleware_1.withResponseHandler; } });
-Object.defineProperty(exports, "createApiHandler", { enumerable: true, get: function () { return responseMiddleware_1.createApiHandler; } });
+Object.defineProperty(exports, "apiHandlerWithArgu", { enumerable: true, get: function () { return responseMiddleware_1.apiHandlerWithArgu; } });
+Object.defineProperty(exports, "apiHandler", { enumerable: true, get: function () { return responseMiddleware_1.apiHandler; } });
