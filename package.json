@@ -1,6 +1,6 @@
 {
   "name": "next-api-flow",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Standardized API response handling for Next.js applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
