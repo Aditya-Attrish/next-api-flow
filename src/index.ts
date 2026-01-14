@@ -6,4 +6,4 @@ export * from './middlewares/responseMiddleware';
 // Convenience exports
 export { ResponseBuilder as ApiResponse } from './builders/responseBuilder';
 export { HttpStatus } from './utils/statusCodes';
-export { withResponseHandler, createApiHandler } from './middlewares/responseMiddleware';
+export { apiHandlerWithArgu, apiHandler } from './middlewares/responseMiddleware';

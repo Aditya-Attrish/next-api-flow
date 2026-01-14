@@ -34,6 +34,32 @@ Creates a successful API response.
   };
 }
 ```
+#### `paginated<T>(data: PaginatedData<T>, message?: string, options?: ResponseOptions)`
+
+Creates a paginated API response.
+
+**Parameters:**
+- `data:` Paginated data object
+- `message` (optional, default: "Success"): Success message
+- `options` (optional): Additional response options
+
+**Returns:**
+```json
+{
+  "success": true,
+  "message": "Users fetched successfully",
+  "data": [...items],
+  "meta": {
+    "timestamp": "2024-01-01T00:00:00.000Z",
+    "pagination": {
+      "page": 1,
+      "limit": 10,
+      "total": 100,
+      "totalPages": 10
+    }
+  }
+}
+```
 
 ## HttpStatus
 
@@ -65,3 +91,17 @@ HttpStatus.NOT_IMPLEMENTED       // 501
 HttpStatus.BAD_GATEWAY           // 502
 HttpStatus.SERVICE_UNAVAILABLE   // 503
 ```
+
+## Middleware
+
+### apiHandler(handler)
+Wraps an API handler with automatic error handling and response formatting.
+
+**Parameters:**
+handler: Async function that takes () and returns NextResponse or ResponseBuilder.
+
+### apiHandlerWithArgu(handler)
+Wraps an API handler with automatic error handling and response formatting.
+
+**Parameters:**
+handler: Async function that takes (req: NextRequest) and returns NextResponse or ResponseBuilder.

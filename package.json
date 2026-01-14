@@ -18,8 +18,7 @@
     "build:esm": "tsc --module esnext --outDir dist-esm && mv dist-esm dist",
     "dev": "tsc --watch",
     "test": "jest",
-    "lint": "eslint src/**/*.ts",
-    "prepublishOnly": "npm run build && npm run test"
+    "lint": "eslint src/**/*.ts"
   },
   "keywords": [
     "nextjs",

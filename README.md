@@ -31,12 +31,12 @@ yarn add next-api-flow
 import { createApiHandler, ResponseBuilder } from 'nextjs-api-response';
 
 // App Router
-export const GET = createApiHandler(async () => {
+export const GET = apiHandler(async () => {
   const data = await fetchData();
   return ResponseBuilder.success(data, 'Data fetched');
 });
 
-export const POST = createApiHandler(async (request: NextRequest) => {
+export const POST = apiHandlerWithArgu(async (request: NextRequest) => {
   const data = await request.json();
   
   // Validation example
@@ -97,3 +97,6 @@ MIT © Aditya Attrish
 - [GETTING STARTED](`./docs/GETTING_STARTED.md`)
 - [CONTRIBUTING](`./docs/CONTRIBUTING.md`)
 - Source: repository root
+
+## feedback
+Please give me feedback 🙏. 
