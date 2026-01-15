@@ -29,7 +29,7 @@ function apiHandler(handler) {
         }
         catch (error) {
             console.error('API Error:', error);
-            const { response, options } = responseBuilder_1.ResponseBuilder.internalError(error.message || 'An unexpected error occurred');
+            const { response, options } = responseBuilder_1.ResponseBuilder.internalError(error instanceof Error ? error.message : 'An unexpected error occurred');
             return server_1.NextResponse.json(response, {
                 status: options.statusCode,
                 headers: options.headers,
@@ -62,7 +62,7 @@ function apiHandlerWithArgu(handler) {
         }
         catch (error) {
             console.error('API Error:', error);
-            const { response, options } = responseBuilder_1.ResponseBuilder.internalError(error.message || 'An unexpected error occurred');
+            const { response, options } = responseBuilder_1.ResponseBuilder.internalError(error instanceof Error ? error.message : 'An unexpected error occurred');
             return server_1.NextResponse.json(response, {
                 status: options.statusCode,
                 headers: options.headers,
