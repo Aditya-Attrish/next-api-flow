@@ -33,7 +33,7 @@ export function apiHandler(
       console.error('API Error:', error);
 
       const { response, options } = ResponseBuilder.internalError(
-        (error as Error).message || 'An unexpected error occurred'
+        error instanceof Error? error.message : 'An unexpected error occurred'
       );
 
       return NextResponse.json(response, {
@@ -75,7 +75,7 @@ export function apiHandlerWithArgu(
       console.error('API Error:', error);
 
       const { response, options } = ResponseBuilder.internalError(
-        (error as Error).message || 'An unexpected error occurred'
+        error instanceof Error? error.message : 'An unexpected error occurred'
       );
 
       return NextResponse.json(response, {

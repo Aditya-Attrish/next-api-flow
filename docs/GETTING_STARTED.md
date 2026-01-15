@@ -1,6 +1,5 @@
 ## **docs/GETTING_STARTED.md**
 
-```markdown
 # Getting Started
 
 A comprehensive guide to get you started with Next.js API Response Standardizer.
@@ -8,11 +7,6 @@ A comprehensive guide to get you started with Next.js API Response Standardizer.
 ## Table of Contents
 - [Installation](#installation)
 - [Quick Start](#quick-start)
-- [Basic Concepts](#basic-concepts)
-- [First API Endpoint](#first-api-endpoint)
-- [Response Types](#response-types)
-- [Error Handling](#error-handling)
-- [Next Steps](#next-steps)
 
 ## Installation
 
@@ -30,14 +24,34 @@ npm install next-api-flow
 
 ## Quick Start
 
+### For Next.js App router
 ```typescript
 import { NextResponse } from 'next/server'
-import { createApiHandler } from 'nextjs-api-response';
+import { apiHandler } from 'nextjs-api-flow';
 
 // App Router
-export const GET = createApiHandler(async () => {
+export const GET = apiHandler(async () => {
   const data = await fetchData();
   return NextResponse.json({data, message: 'Data fetched'},
    { status: 200 }); // customerize response format
 });
+
+```
+
+### For Next.js page router
+```typescript
+import { NextApiRequest, NextApiResponse } from 'next';
+import { ResponseBuilder } from 'nextjs-api-flow';
+
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { response, options } = ResponseBuilder.success(
+    { message: 'Hello from Pages Router!' },
+    'Success'
+  );
+  
+  res.status(options.statusCode || 200).json(response);
+}
 ```

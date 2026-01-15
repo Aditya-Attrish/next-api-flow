@@ -27,8 +27,9 @@ yarn add next-api-flow
 
 ## Quick Start
 
+### Typescript
 ```typescript
-import { createApiHandler, ResponseBuilder } from 'nextjs-api-response';
+import { apiHandler,apiHandlerWithArgu, ResponseBuilder } from 'nextjs-api-flow';
 
 // App Router
 export const GET = apiHandler(async () => {
@@ -37,6 +38,31 @@ export const GET = apiHandler(async () => {
 });
 
 export const POST = apiHandlerWithArgu(async (request: NextRequest) => {
+  const data = await request.json();
+  
+  // Validation example
+  if (!data.email) {
+    return ResponseBuilder.validationError([
+      { code: 'VALIDATION_ERROR', message: 'Email is required', field: 'email' }
+    ]);
+  }
+
+   const user = await createUser(data);
+
+  return user;  // automatially convert data to api response format
+});
+```
+### Javscript
+```javascript
+import { apiHandler,apiHandlerWithArgu, ResponseBuilder } from 'nextjs-api-flow';
+
+// App Router
+export const GET = apiHandler(async () => {
+  const data = await fetchData();
+  return ResponseBuilder.success(data, 'Data fetched');
+});
+
+export const POST = apiHandlerWithArgu(async (request) => {
   const data = await request.json();
   
   // Validation example
@@ -96,7 +122,6 @@ MIT © Aditya Attrish
 - [API REFERENCE](`./docs/API.md`)
 - [GETTING STARTED](`./docs/GETTING_STARTED.md`)
 - [CONTRIBUTING](`./docs/CONTRIBUTING.md`)
-- Source: repository root
 
 ## feedback
 Please give me feedback 🙏. 
