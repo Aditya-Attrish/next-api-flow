@@ -5,4 +5,4 @@ export * from './middlewares/responseMiddleware';
 // Convenience exports
 export { ResponseBuilder as ApiResponse } from './builders/responseBuilder';
 export { HttpStatus } from './utils/statusCodes';
-export { apiHandlerWithArgu, apiHandler } from './middlewares/responseMiddleware';
+export { apiHandler } from './middlewares/responseMiddleware';
