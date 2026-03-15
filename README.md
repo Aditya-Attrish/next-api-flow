@@ -37,7 +37,7 @@ export const GET = apiHandler(async () => {
   return ResponseBuilder.success(data, 'Data fetched');
 });
 
-export const POST = apiHandlerWithArgu(async (request: NextRequest) => {
+export const POST = apiHandler(async (request: NextRequest) => {
   const data = await request.json();
   
   // Validation example
@@ -62,7 +62,7 @@ export const GET = apiHandler(async () => {
   return ResponseBuilder.success(data, 'Data fetched');
 });
 
-export const POST = apiHandlerWithArgu(async (request) => {
+export const POST = apiHandler(async (request) => {
   const data = await request.json();
   
   // Validation example
